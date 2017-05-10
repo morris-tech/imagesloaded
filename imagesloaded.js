@@ -268,6 +268,7 @@ LoadingImage.prototype.check = function() {
 
   // If none of the checks above matched, simulate loading on detached element.
   this.proxyImage = new Image();
+  this.proxyImage.crossOrigin = 'Anonymous';
   this.proxyImage.addEventListener( 'load', this );
   this.proxyImage.addEventListener( 'error', this );
   // bind to image as well for Firefox. #191
@@ -318,6 +319,7 @@ function Background( url, element ) {
   this.url = url;
   this.element = element;
   this.img = new Image();
+  this.img.crossOrigin = 'Anonymous';
 }
 
 // inherit LoadingImage prototype
